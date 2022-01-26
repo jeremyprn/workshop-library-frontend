@@ -1,7 +1,7 @@
 const API_URL = "https://evening-atoll-40460.herokuapp.com";
 let booksContainer = document.querySelector('.books-container');
 let bookName = document.createElement('h2');
-let authorsName = document.getElementById('authors_letter').getElementsByTagName('div');
+let authorsName = document.getElementsByClassName("letters-content")
 let seeMoreButton = document.querySelector('.see_more');
 let bookModalClose = document.querySelector('.book-modal-close');
 let indexBooks = 10;
@@ -234,7 +234,7 @@ const printAuthors = async (authors) => {
         authors.forEach(element => {
             if(authorsName[i].id.charAt(authorsName[i].id.length - 1) == element.name.charAt(0)){
                 authorsName[i].innerHTML += "<h6>" + element.name +"</h6>";
-            } 
+            }
         });
     }
 }

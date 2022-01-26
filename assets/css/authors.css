@@ -2,16 +2,82 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    /* border:1px solid red; */
+    padding: 0;
+    margin:2.5% 0;
+    gap: 2vw;
 }
 .authors div {
-    width: 20%;
+    position: relative;
+    width: 10%;
+    height: 8vh;
+    /* border:1px solid red; */
+    overflow: hidden;
+    padding: 0;
+    margin:0;
 }
-h6 {
-    font-size: 0.5em;
-    margin:0 2vw;
+.authors div:hover{
+    overflow: visible;
+    position: relative;
+    height: 8vh;
+}
+.authors div .letters-content {
+    transition: width 0.4s;
+    width: 100%;
+    height: 50vh;
+}
+.authors div:hover .letters-content {
+    position: absolute;
+    background-color: rgba(33, 131, 128, 0.6);
+    backdrop-filter: blur(5px);
+    color:black;
+    height: auto;
+    max-height: 20vh;
+    width: min-content;
+    /* border:1px solid red; */
+    z-index: 100;
+    white-space: nowrap;
+    overflow-y: scroll;
+    padding: 1vw 2vw;
+}
+.authors div:hover .letters-content h6 {
+    font-family: "Hind Madurai";
+    width: min-content;
+    transition: 0.2s;
+}
+.authors div:hover .letters-content h6:hover {
+    color:white;
+    cursor: pointer;
+}
+.authors div h3 {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin:0;
+    /* border:1px solid red; */
+    height: 100%;
+}
+.authors div h3 span {
+    font-family: 'Lora';
+    -webkit-text-stroke: 2px black;
+    line-height: 1;
+    font-size: 1.5em;
+    font-weight: 800;
+    opacity: 0.9;
+    color:transparent;
+    
+
+}
+.authors div h3 ion-icon{
+    font-size: 0.75em;
+}
+.authors div:hover h3 ion-icon{
+    transform: rotate(90deg);
+    transition: 0.5s;
 }
 .container h3 {
-    margin:10vh 0;
+    padding: 0;
+    margin:0;
 }
 
 #authors div h3 {

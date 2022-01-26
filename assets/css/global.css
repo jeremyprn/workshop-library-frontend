@@ -18,6 +18,9 @@ section{
     padding: 0;
     width: 100%;
 }
+section h3 {
+    font-size: 2.25em;
+}
 .container{
     padding: 0;
     width: 100%;
