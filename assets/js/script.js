@@ -1,5 +1,6 @@
+const API_URL = "https://evening-atoll-40460.herokuapp.com";
 let booksContainer = document.querySelector('.books-container');
-var bookName = document.createElement('h2');
+let bookName = document.createElement('h2');
 let authorsName = document.getElementById('authors_letter').getElementsByTagName('div');
 let seeMoreButton = document.querySelector('.see_more');
 let bookModalClose = document.querySelector('.book-modal-close');
@@ -9,21 +10,21 @@ let dataBooks;
 let dataAuthors;
 
 const getBooks = async() => {
-    const response = await fetch('http://localhost:8000/books');
+    const response = await fetch(`${API_URL}/books`);
     const dataBooks = await response.json();
     
     return dataBooks;
 }
 
 const getBook = async(id) => {
-    const response = await fetch(`http://localhost:8000/books/${id}`);
+    const response = await fetch(`${API_URL}/books/${id}`);
     const dataBook = await response.json();
     
     return dataBook;
 }
 
 const getAuthors = async() => {
-    const response = await fetch('http://localhost:8000/authors');
+    const response = await fetch(`${API_URL}/authors`);
     const dataAuthors = await response.json();
     
     return dataAuthors;
