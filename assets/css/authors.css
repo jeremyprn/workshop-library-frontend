@@ -11,14 +11,14 @@
     position: relative;
     width: 10%;
     height: 8vh;
-    border:1px solid red;
+    /* border:1px solid red; */
     overflow: hidden;
     padding: 0;
     margin:0;
 }
 @media screen and (max-width: 800px) {
     .authors div {
-        border:1px solid red;
+        /* border:1px solid red; */
         width: 30%;
         margin-left: 1.25vw;
         
