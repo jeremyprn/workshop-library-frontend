@@ -1,0 +1,301 @@
+.books-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.book-content {
+    position: relative;
+    width: 17%;
+    height: 45vh;
+    padding: 10px 20px;
+    margin:1%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    /* border:1px solid blue; */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    .book-content {
+        position: relative;
+        width: 80%;
+        height: 50vh;
+        padding: 10px 20px;
+        margin:1%;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    
+    }
+}
+
+.book-content:hover::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(225, 225, 225, 0.25);
+    cursor: pointer;
+}
+.book-content .title, .book-content .author {
+    /* border:1px solid red; */
+    height: max-content;
+    line-height: 1;
+    padding: 2.5% 5%;
+
+}
+.book-content .title h2{
+    font-size: 0.85em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.book-content .author h3 {
+    font-size: 0.75em;
+    font-weight: 200;
+    color: rgb(108, 108, 108);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    margin:0;
+    padding: 0;
+}
+.book-content .rating {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #218380;
+    color:white;
+    font-size: 1em;
+    color: white;
+    -webkit-box-shadow: inset 0px 50px 25px -30px rgba(38,38,38,0.5); 
+    box-shadow: inset 0px 50px 25px -30px rgba(38,38,38,0.5);
+    font-weight: 200;
+}
+
+.book-content .topics {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 0.55em;
+    font-weight: 200;
+}
+
+.book-content .thumbnail{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+}
+.book-content .thumbnail::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    top:0;
+    width: 100%;
+    /* background-color: coral; */
+    -webkit-box-shadow: inset 0px -40px 25px -30px rgba(38,38,38,0.8); 
+    box-shadow: inset 0px -40px 25px -25px rgba(38,38,38,0.8);
+    /* border:1px red solid; */
+}
+
+.book-content img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.books-modal-container {
+    display: none; 
+}
+.books-modal-container.active {
+    position: fixed;
+    overflow-y: hidden;
+    top:0;
+    left: 0;
+    display: block;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height:100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.books-modal-container.active .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    width: 65%;
+    height:75vh;
+}
+.books-modal-container.active .content .book {
+    display: flex;
+    width: 100%;
+    height:100%;
+    padding: 1vw;
+}
+.books-modal-container.active .content .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+}
+.books-modal-container.active .content .left .thumbnail {
+    overflow: hidden;
+}
+.books-modal-container.active .content .left .thumbnail img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.books-modal-container.active .content .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    /* border:1px solid blue; */
+    gap: 1vh;
+    overflow: hidden;
+}
+.books-modal-container.active .content .right .title{
+    /* border:1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+    width: 100%;
+}
+.books-modal-container.active .content .right .title h2{
+    margin:0;
+    padding: 0;
+    /* border:1px solid red; */
+    font-size: 2em;
+    text-align: center;
+}
+.books-modal-container.active .content .right .authors{
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+.books-modal-container.active .content .right .authors h3{
+    margin:0;
+    padding: 0;
+    /* border:1px solid red; */
+    font-size: 1em;
+    font-weight: 200;
+}
+.books-modal-container.active .content .right .summary{
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: center;
+    margin: 2vh 0;
+    padding: 2vh;
+    width: 100%;
+    max-height: 30%;
+    overflow: hidden;
+    font-size: 0.75em;
+}
+.books-modal-container.active .content .right .topics{
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+    width: 100%;
+    font-size: 0.75em;
+    font-weight: 400;
+}
+.books-modal-container.active .content .right .rating{
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: center;
+    margin:0;
+    width: 100%;
+    color:#218380;
+}
+.books-modal-container.active .content .right .buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background: #218380;
+    display: flex;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+    width: 50%;
+    height: 10%;
+}
+.books-modal-container.active .content .right a{
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 600;
+    color:white;
+}
+.book-modal-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    color:grey;
+    font-size: 2.5em;
+    background: transparent;
+    border:none;
+    width: 10%;
+    height: 15%;
+}
+.book-modal-close:hover {
+    color:black;
+    transform: scale(1.25);
+    transition: 0.5s;
+}
+
+.see_more {
+    width: 25%;
+    display: block;
+    margin: auto;
+    white-space: nowrap;
+    background-color: #FBB13C;
+    border-radius: 50px;
+    border: 1px solid #FBB13C;
+    font-weight: 800;
+    margin-top:5vh;
+}
+.see_more.hidden {
+    display: none;
+}

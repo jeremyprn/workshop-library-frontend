@@ -1,0 +1,19 @@
+.authors {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.authors div {
+    width: 20%;
+}
+h6 {
+    font-size: 0.5em;
+    margin:0 2vw;
+}
+.container h3 {
+    margin:10vh 0;
+}
+
+#authors div h3 {
+    margin:0 2vw;
+}
